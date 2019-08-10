@@ -1,7 +1,7 @@
 class DeviceEventLogWorker
   include Sidekiq::Worker
 
-  def perform(*args)
-    # Do something
+  def perform(attributes)
+    DeviceEventLog.create!(attributes)
   end
 end

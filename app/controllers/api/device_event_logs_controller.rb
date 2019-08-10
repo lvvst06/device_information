@@ -1,7 +1,7 @@
 class Api::DeviceEventLogsController < ApplicationController
   def create
-    device_event_log = DeviceEventLogs::Create.new(create_params).execute
-    render json: json_with_success(message: 'created successfully', data: DeviceEventLogSerializer.new(device_event_log))
+    DeviceEventLogWorker.perform_async(create_params)
+    render json: json_with_success(message: 'created successfully')
   end
 
   private
