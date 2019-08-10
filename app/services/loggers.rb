@@ -24,6 +24,6 @@ class Loggers
   end
 
   def send_email
-    UserMailer.delay.loggers(@text)
+    AdminMailer.delay.loggers(@text)
   end
 end
