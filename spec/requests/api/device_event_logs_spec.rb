@@ -19,7 +19,7 @@ describe Api::DeviceEventLogsController do
       end
     end
 
-    context 'when event_name is invalid' do
+    context 'when event_name param is invalid' do
       let(:event_name) { nil }
 
       specify do
@@ -28,7 +28,7 @@ describe Api::DeviceEventLogsController do
       end
     end
 
-    context 'when timestamp is invalid' do
+    context 'when timestamp param is invalid' do
       let(:timestamp) { nil }
 
       specify do
